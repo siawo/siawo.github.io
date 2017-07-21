@@ -1,0 +1,44 @@
+<html>
+    <head>
+    <audio id="green" src="assets/green.mp3"></audio>
+        <audio id="red" src="assets/red.mp3"></audio>
+        <audio id="yellow" src="assets/yellow.mp3"></audio>
+        <audio id="blue" src="assets/blue.mp3"></audio>
+        <audio id="wrong" src="assets/wrong.mp3"></audio>
+        <link rel="stylesheet" href="css/index.css">
+        <script defer src="scripts/memory.js"></script>
+    </head>
+    <body background="assets/Background.png">
+        <div id="main">
+            <button type="button" class="button top-left" id="simon0" value="green">
+            </button>
+            <button tyoe="button" class="button top-right" id="simon1" value="red">
+            </button>
+            <button type="button" class="button bottom-left" id="simon2" value="yellow">
+            </button>
+            <button type="button" class="button bottom-right" id="simon3" value="blue">
+            </button>
+            <div id="inner">
+                <b id="simon-text">Simon</b>
+                <button type="button" class="start" id="start" >
+                </button>
+                <button type="button" class="strict" id="strict">
+                </button>
+                <button type="button" class="light" id="light">
+                </button>
+                <div id="counter" class="counter">
+                    <p id="count">!!</p>
+                </div>
+                <p class="p" id="pc"><b>counter</b></p>
+                <p class="p" id="ps"><b>start</b></p>
+                <p class="p" id="pst"><b>strict</b></p>
+                <label class="switch">
+                <input type="checkbox" id="on">
+                <span class="slider"></span>
+                <p class="p1" id="on"><b>on</b></p>
+                <p class="p1" id="off"><b>off</b></p>
+                </label>
+            </div>
+        </div>
+    </body>
+</html>
