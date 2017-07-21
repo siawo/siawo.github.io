@@ -4,9 +4,9 @@ let myGame={
     strict:0,
     arr:[],
     count:0,
-    set_value:["green","red","blue","yellow"],
+    set_value:["green","red","yellow","blue"],
     set_start:["#297a33","#a5222d","#d8d63c","#234c8e"],
-    set_blink:["#12ed71","#f41202","#fcf900","#0238fc"],
+    set_blink:["#12ed71","#f41202","#fcf900","#04a0f9"],
     play_over:0,
     click:[]
 }
@@ -101,12 +101,7 @@ function glow()
                     simon.style.background=myGame.set_start[myGame.arr[i]];  
                 }
             },600 );
-            if((i===myGame.arr.length-1) && myGame.on)
-            {
-                console.log("enter");
-
-            }
-            if(i==myGame.arr.length-1 && myGame.on)
+            if(i==(myGame.arr.length-1) && myGame.on)
             {
                 disable(true);
             }
