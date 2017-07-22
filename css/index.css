@@ -11,8 +11,7 @@
     height:250;
     width:250;
     border-style: solid;
-    border-style: solid;
-    border-color: #404142;
+    border-color: #444444;
 }
 .button:focus
 {
@@ -22,54 +21,58 @@
 {   top:0px;
     left:0px;
     border-radius: 100% 0 0 0;
-    background-color:#297a33;
-    border-width: 20px 10px 10px 20px;
+    background-color:#47ad4c;
+    border-width: 24px 12px 12px 24px;
 }
 .top-right
 {   
     top:0px;
     right:0px;
     border-radius: 0 100% 0 0;
-    background-color:#a5222d;
-    border-width: 20px 20px 10px 10px;
+    background-color:#9b1414;
+    border-width: 24px 24px 12px 12px;
 }
 .bottom-left
 {   
     bottom:0px;
     left:0px;
     border-radius: 0 0 0 100%;
-    background-color:#d8d63c;
-    border-width: 10px 10px 20px 20px;
+    background-color:#d6c020;
+    border-width: 12px 12px 24px 24px;
 }
 .bottom-right
 {
     bottom:0px;
     right:0px;
     border-radius: 0 0 100% 0 ;
-    background-color:#234c8e;
-    border-width: 10px 20px 20px 10px;
+    background-color:#37609e;
+    border-width: 12px 24px 24px 12px;
 }
 #inner
 {
-    position:relative;
-    height:275px;
-    width:275px;
-    top:97px;
-    left:97px;
+    position:absolute;
+    height:230px;
+    width:230px;
+    top:125px;
+    left:125px;
     border-radius: 50%;
-    background-color: white;
-     border-width: 20px;
+    background-color: #f7f7f7;
+     border-width: 12px;
     border-style: solid;
-    border-color: #404142;
-    z-index: 10;
+    border-color: #444444;
 }
 #simon-text
 {
+    font-family: Alfa Slab One; 
     position: absolute;
-    left:45px;
-    top: 40px;
-    font-size: 70px;
-    color: #404142;
+    left:15px;
+    top: -15px;
+    font-size: 55px;
+    color: #444444;
+}
+sup
+{
+  font-size: 18px;
 }
 .start
 {   
@@ -78,11 +81,11 @@
     border-width: 4px;
     border-style: solid;
     border-color: #404142;
-    height: 32px;
-    width:32px;
+    height: 30px;
+    width:30px;
     border-radius: 50%;
-    bottom:100px;
-    right:110px;
+    bottom:77px;
+    right:90px;
 }
 .start:focus
 {
@@ -95,11 +98,11 @@
     border-width: 4px;
     border-style: solid;
     border-color: #404142;
-    height: 32px;
-    width:32px;
+    height: 30px;
+    width:30px;
     border-radius: 50%;
-    bottom:100px;
-    right:60px;
+    bottom:77px;
+    right:34px;
 }
 .strict:focus
 {
@@ -111,23 +114,24 @@
     background-color:#471c1c;
     border-width: 1px;
     border-color: #404142;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
-    bottom:140px;
-    right:68px;
+    bottom:112px;
+    right:44px;
 }
 .counter
 {
     position: absolute;
-    bottom:100px;
-    right:180px;
-    height:25px;
-    width:45px;
+    bottom:70px;
+    left:20px;
+    height:38px;
+    width:58px;
     border-width: 4px;
     border-style: solid;
     border-color: #404142;
-    background-color: #471c1c
+    background-color: #471c1c;
+    border-radius: 20%;
 }
 #count
 {   position: relative;
@@ -135,33 +139,36 @@
     text-align: center;
     margin-top:0px;
     padding-top: 4px;
+    opacity: 0.3;
 }
 .p
 {
+  font-family: Oswald;
+  font-size:13px;
     position: absolute;
-    bottom:60px;
-    color: #404142;
+    bottom:32px;
+    color: #444444;
 }
 #pc
 {
-    right:180px;
+    left:37px;
 }
 #ps
 {
-    right:110px;
+    left:112px;
 }
 #pst
 {
-    right:60px;
+    right:30px;
 }
 /****************w3school*****start*********************************/
 .switch {
   position: relative;
-  top:220px;
-  left:115px;
+  top:190px;
+  left:100px;
   display: inline-block;
-  width: 50px;
-  height: 26px;
+  width: 46px;
+  height: 23px;
 }
 
 .switch input {display:none;}
@@ -181,11 +188,12 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: blue;
+  height: 19px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #4d9fbc;
+  border-radius: 10%;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -199,22 +207,24 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
 }
 /****************w3school*****end*********************************/
 .p1
 {
+    font-family: Oswald;
+    font-size: 13px;
     position: absolute;
     bottom:-10px;
-    color: #404142;
+    color: #444444;
 }
 #on
 {
-    left:60px;
+    left:50px;
 }
 #off
 {
-    left:-30px;
+    left:-20px;
 }

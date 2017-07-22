@@ -108,7 +108,6 @@ function glow()
         }, k);
     }
 } 
-    //myGame.play_over=setInterval(glow,20000);
     document.getElementById("simon0").addEventListener("click",
     function()
     {

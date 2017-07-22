@@ -7,6 +7,7 @@
         <audio id="blue" src="assets/blue.mp3"></audio>
         <audio id="wrong" src="assets/wrong.mp3"></audio>
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fonts.css">
         <script defer src="scripts/memory.js"></script>
     </head>
     <body background="assets/Background.png">
@@ -20,24 +21,24 @@
             <button type="button" class="button bottom-right" id="simon3" value="blue">
             </button>
             <div id="inner">
-                <b id="simon-text">Simon</b>
+                <p id="simon-text">Simon<sup>&#174</sup></p>
                 <button type="button" class="start" id="start" >
                 </button>
                 <button type="button" class="strict" id="strict">
                 </button>
-                <button type="button" class="light" id="light">
-                </button>
-                <div id="counter" class="counter">
-                    <p id="count">!!</p>
+                <div class="light" id="light">
                 </div>
-                <p class="p" id="pc"><b>counter</b></p>
-                <p class="p" id="ps"><b>start</b></p>
-                <p class="p" id="pst"><b>strict</b></p>
+                <div id="counter" class="counter">
+                    <p id="count">- -</p>
+                </div>
+                <p class="p" id="pc">COUNT</p>
+                <p class="p" id="ps">START</p>
+                <p class="p" id="pst">STRICT</p>
                 <label class="switch">
                 <input type="checkbox" id="on">
                 <span class="slider"></span>
-                <p class="p1" id="on"><b>on</b></p>
-                <p class="p1" id="off"><b>off</b></p>
+                <p class="p1" id="on">ON</p>
+                <p class="p1" id="off">OFF</p>
                 </label>
             </div>
         </div>
