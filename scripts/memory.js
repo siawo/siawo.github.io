@@ -62,6 +62,10 @@ function reset()// this function is called by start button
         {
             clear();
             myGame.count.innerHTML="--";
+            myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="";},200));
+            myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="--";},400));
+            myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="";},600));
+            myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="--";},800));
             myGame.arr=[];
             myGame.click=[];
             for(let i=0;i<myGame.set_start.length;i++)
@@ -178,6 +182,10 @@ function checking()
 {
     document.getElementById("wrong").play();// play the sound for wrong button
     myGame.count.innerHTML="!!";// sets the count display as !!
+    myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="";},200));
+    myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="!!";},400));
+    myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="";},600));
+    myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="!!";},800));
     myGame.click=[];//reset of click array
     myGame.counter=0;// reset of counter
     if(myGame.strict_val===1)// if it is strict mode the game will start from stage 1 with new set of string
