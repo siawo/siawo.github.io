@@ -61,6 +61,7 @@ function reset()// this function is called by start button
         else
         {
             clear();
+            myGame.count_value=0;
             myGame.count.innerHTML="--";
             myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="";},200));
             myGame.set_time.push(setTimeout(function(){myGame.count.innerHTML="--";},400));
