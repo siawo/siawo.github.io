@@ -1,42 +1,45 @@
 <html>
     <head>
+    <TITLE>Simon Game</TITLE>
+    <!-- audio links-->
     <audio id="green" src="assets/green.mp3"></audio>
         <audio id="red" src="assets/red.mp3"></audio>
         <audio id="yellow" src="assets/yellow.mp3"></audio>
         <audio id="blue" src="assets/blue.mp3"></audio>
         <audio id="wrong" src="assets/wrong.mp3"></audio>
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fonts.css">
         <script defer src="scripts/memory.js"></script>
     </head>
     <body background="assets/Background.png">
         <div id="main">
-            <button type="button" class="button top-left" id="simon0" value="green">
+            <button type="button" class="button top-left" id="simon0" value="green" onclick="click_button(this)" disabled>
             </button>
-            <button tyoe="button" class="button top-right" id="simon1" value="red">
+            <button type="button" class="button top-right" id="simon1" value="red" onclick="click_button(this)" disabled>
             </button>
-            <button type="button" class="button bottom-left" id="simon2" value="yellow">
+            <button type="button" class="button bottom-left" id="simon2" value="yellow" onclick="click_button(this)" disabled>
             </button>
-            <button type="button" class="button bottom-right" id="simon3" value="blue">
+            <button type="button" class="button bottom-right" id="simon3" value="blue" onclick="click_button(this)" disabled>
             </button>
             <div id="inner">
-                <b id="simon-text">Simon</b>
-                <button type="button" class="start" id="start" >
+                <p id="simon-text">Simon<sup>&#174</sup></p>
+                <button type="button" class="start" id="start"  onclick="reset()" disabled>
                 </button>
-                <button type="button" class="strict" id="strict">
+                <button type="button" class="strict" id="strict" onclick="set()" disabled>
                 </button>
-                <button type="button" class="light" id="light">
-                </button>
-                <div id="counter" class="counter">
-                    <p id="count">!!</p>
+                <div class="light" id="light">
                 </div>
-                <p class="p" id="pc"><b>counter</b></p>
-                <p class="p" id="ps"><b>start</b></p>
-                <p class="p" id="pst"><b>strict</b></p>
+                <div id="counter" class="counter">
+                    <p id="count">--</p>
+                </div>
+                <p class="p" id="pc">COUNT</p>
+                <p class="p" id="ps">START</p>
+                <p class="p" id="pst">STRICT</p>
                 <label class="switch">
-                <input type="checkbox" id="on">
+                <input type="checkbox" id="on" onclick="on(this)">
                 <span class="slider"></span>
-                <p class="p1" id="on"><b>on</b></p>
-                <p class="p1" id="off"><b>off</b></p>
+                <p class="p1" id="on">ON</p>
+                <p class="p1" id="off">OFF</p>
                 </label>
             </div>
         </div>
