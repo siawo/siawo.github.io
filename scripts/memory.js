@@ -1,90 +1,105 @@
-let myGame={
+let myGame=
+{
     on:false,
-    start:0,
-    strict:0,
+    start:document.getElementById("start"),
+    start_val:0,
+    strict:document.getElementById("strict"),
+    strict_val:0,
     arr:[],
-    count:0,
+    count:document.getElementById("count"),
+    count_value:0,
     set_value:["green","red","yellow","blue"],
-    set_start:["#297a33","#a5222d","#d8d63c","#234c8e"],
-    set_blink:["#12ed71","#f41202","#fcf900","#04a0f9"],
-    play_over:0,
-    click:[]
+    set_start:["#47ad4c","#9b1414","#d6c020","#37609e"],
+    set_blink:["#26ff00","#ff0000","#f8ff32","#00bbff"],
+    click:[],
+    button:[],
+    counter:0
 }
-
-    document.getElementById("on").addEventListener("click",
-    function()
+for(let i=0;i<4;i++)
+{
+    myGame.button[i]=document.getElementById("simon"+i);
+}
+function on(on)
+{   
+    myGame.on=on.checked;
+    if(myGame.on)
     {
-         myGame.on=document.getElementById("on").checked;
-         if(!myGame.on)
+        myGame.start.disabled=false;
+        myGame.strict.disabled=false;
+        myGame.count.style.opacity=1;
+    }
+    else
+    {
+        myGame.start.disabled=true;
+        myGame.strict.disabled=true;
+        myGame.start_val=0;
+        for(let i=0;i<myGame.set_start.length;i++)
         {
-            myGame.arr=[];
-            myGame.click=[];
-            count=0;
-            document.getElementById("count").innerHTML="!!";
+            myGame.button[i].style.background=myGame.set_start[i];
+        }
+        disable(true);
+        myGame.count.innerHTML="- -";
+        myGame.count.style.opacity=0.4;
+        document.getElementById("light").style.background="#471c1c";   
+    }
+}
+function reset()
+{
+    if(myGame.on)
+    {
+        myGame.start_val=1;
+        myGame.count.innerHTML=myGame.count_value;
+        myGame.arr=[];
+        myGame.click=[];
+        setTimeout(createString,1000);
+    }
+
+}
+function set()
+{
+    if(myGame.on)
+    {
+        if(myGame.strict_val==0)
+        {
+            myGame.strict_val=1;
+            document.getElementById("light").style.background="red";
+        }
+        else
+        {
+            myGame.strict_val=0;
             document.getElementById("light").style.background="#471c1c";
         }
-
-    });
-    document.getElementById("start").addEventListener("click",
-    function()
-    {
-        if(myGame.on)
-        {
-             myGame.start=1;
-             //console.log(myGame.start);
-             myGame.arr=[];
-             myGame.click=[];
-             createString();
-        }
-        else
-        {
-            myGame.start=0;   
-        }
-    });
-    document.getElementById("strict").addEventListener("click",
-    function()
-    {
-        if(myGame.on && myGame.strict==0)
-        {
-             myGame.strict=1
-             document.getElementById("light").style.background="red";
-        }
-        else
-        {
-            myGame.strict=0;
-            document.getElementById("light").style.background="#471c1c";   
-        }
-    });
-    
+    }
+}
 function createString()
 {
     myGame.arr.push(Math.floor(Math.random() * 4));
-    myGame.count=myGame.arr.length;
-    if(myGame.count>20)
+    myGame.count_value=myGame.arr.length;
+    if(myGame.count_value>20)
     {
-        setTimeout(function(){alert("you won");},400);
-        myGame.arr=[];
-        myGame.click=[];
-        document.getElementById("count").innerHTML="!!";
-        myGame.count=0;
+        setTimeout(function()
+            {
+                myGame.count.innerHTML="WON";
+                reset();
+            },400);
         return;
     }
-    document.getElementById("count").innerHTML=myGame.count;
+    myGame.count.innerHTML=myGame.count_value;
     glow();
 }
 function disable(x)
 {
-    document.getElementById("simon0").disable=x;
-    document.getElementById("simon1").disable=x;
-    document.getElementById("simon2").disable=x;
-    document.getElementById("simon3").disable=x;
+    for(let i=0;i<4;i++)
+    {
+        myGame.button[i].disabled=x;
+    }
 }
 function glow()
 {
-    disable(false);
+    disable(true);
     for(let i=0;i<myGame.arr.length;i++)
     {
-        let simon=document.getElementById("simon"+myGame.arr[i]);
+        let simon=myGame.button[myGame.arr[i]];
         let k=1000+(i*1000);
         setTimeout(function()
         {
@@ -100,97 +115,55 @@ function glow()
                 {
                     simon.style.background=myGame.set_start[myGame.arr[i]];  
                 }
+                if(i==(myGame.arr.length-1) && myGame.on)
+                {
+                disable(false);
+                }
             },600 );
-            if(i==(myGame.arr.length-1) && myGame.on)
-            {
-                disable(true);
-            }
         }, k);
     }
-} 
-    document.getElementById("simon0").addEventListener("click",
-    function()
+}
+function click_button(simon)
+{
+    if(!simon.disabled)
     {
-        var simon=document.getElementById("simon0");
-        console.log("respense take",simon.value);
-        simon.style.background=myGame.set_blink[0];
-        document.getElementById("green").play();
+        var index=myGame.set_value.indexOf(simon.value)
+        document.getElementById(simon.value).play();
+        myGame.click.push(index);
+        simon.style.background=myGame.set_blink[index];
         setTimeout(function() 
             {
-                    simon.style.background=myGame.set_start[0];
-                         
-            },300 );
-        myGame.click.push(0);
+                    simon.style.background=myGame.set_start[index];     
+            },200 );
         checking();
-    });
-    document.getElementById("simon1").addEventListener("click",
-    function()
-    {
-        var simon=document.getElementById("simon1");
-        console.log("respense take",simon.value);
-        simon.style.background=myGame.set_blink[1];
-        document.getElementById("red").play();
-        setTimeout(function() 
-            {
-                    simon.style.background=myGame.set_start[1];     
-            },300 );
-        myGame.click.push(1);
-        checking();
-    });
-    document.getElementById("simon2").addEventListener("click",
-    function()
-    {
-        var simon=document.getElementById("simon2");
-        document.getElementById("yellow").play();
-        console.log("respense take",simon.value);
-        simon.style.background=myGame.set_blink[2];
-        setTimeout(function() 
-            {
-                    simon.style.background=myGame.set_start[2];     
-            },300 );
-        myGame.click.push(2);
-        checking();
-    });
-    document.getElementById("simon3").addEventListener("click",
-    function()
-    {
-        var simon=document.getElementById("simon3");
-        document.getElementById("blue").play();
-        console.log("respense take",simon.value);
-        simon.style.background=myGame.set_blink[3];
-        setTimeout(function() 
-            {
-                    simon.style.background=myGame.set_start[3];     
-            },300 );
-        myGame.click.push(3);
-        checking();
-    });
-
+    }
+}
 function checking()
 {
-    console.log("click length:"+myGame.click.length);
-    console.log("myGame.arr:"+myGame.arr);
-    console.log("myGame.click:"+myGame.click);
     for(let i=0;i<myGame.click.length;i++)
     {
         if(!(myGame.click[i]===myGame.arr[i]))
         {
-            setTimeout(function(){document.getElementById("wrong").play();alert("wrong answer");},400);
+                    document.getElementById("wrong").play();
+                    myGame.count.innerHTML="! !";
             myGame.click=[];
-            if(myGame.strict===1)
+            if(myGame.strict_val===1)
             {
                 myGame.arr=[];
-                setTimeout(createString(),3000);
+                setTimeout(createString,1000);
             }
             else
             {
-                glow();
+                setTimeout(function()
+                {
+                    myGame.count.innerHTML=myGame.count_value;
+                    glow();
+                },2000);
             }
-
         }
         else if((myGame.arr.length===myGame.click.length)&&(i===(myGame.arr.length-1)) && myGame.on)
         {
-            setTimeout(createString(),3000);
+            setTimeout(createString,1000);
             myGame.click=[];
         }
     }
