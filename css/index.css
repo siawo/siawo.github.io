@@ -12,7 +12,7 @@
   height:250;
   width:250;
   border: solid #303030;
-  box-shadow: 4px 4px 12px #303030;
+  box-shadow: 0px 0px 15px #303030;
 }
 .button:focus
 {
@@ -84,7 +84,7 @@ sup
   border-radius: 50%;
   bottom:77px;
   right:90px;
-  box-shadow: 1px 1px 4px #303030;
+  box-shadow: 0px 0px 4px #303030;
 }
 .start:focus
 {
@@ -92,7 +92,7 @@ sup
 }
 .start:active
 {
-  box-shadow: 1px 1px 4px #303030;
+  box-shadow: 0px 0px 4px #303030;
   margin-bottom: -4px;
 }
 .strict
@@ -105,7 +105,7 @@ sup
   border-radius: 50%;
   bottom:77px;
   right:34px;
-  box-shadow: 1px 1px 4px #303030;
+  box-shadow: 0px 0px 4px #303030;
 }
 .strict:focus
 {
@@ -113,7 +113,7 @@ sup
 }
 .strict:active
 {
-  box-shadow: 1px 1px 4px #303030;
+  box-shadow: 0px 0px 4px #303030;
   margin-bottom: -4px;
 }
 .light
