@@ -2,7 +2,6 @@ let myGame=
 {
     on:false,
     start:document.getElementById("start"),
-    start_val:0,
     strict:document.getElementById("strict"),
     strict_val:0,
     arr:[],
@@ -13,11 +12,19 @@ let myGame=
     set_blink:["#26ff00","#ff0000","#f8ff32","#00bbff"],
     click:[],
     button:[],
-    counter:0
+    counter:0,
+    set_time:[]
 }
 for(let i=0;i<4;i++)
 {
     myGame.button[i]=document.getElementById("simon"+i);
+}
+function clear()
+{
+    for(let i=0;i<myGame.set_time.length;i++)
+    {
+        clearTimeout(myGame.set_time[i]);
+    }
 }
 function on(on)
 {   
@@ -32,11 +39,11 @@ function on(on)
     {
         myGame.start.disabled=true;
         myGame.strict.disabled=true;
-        myGame.start_val=0;
         for(let i=0;i<myGame.set_start.length;i++)
         {
             myGame.button[i].style.background=myGame.set_start[i];
         }
+        clear();
         disable(true);
         myGame.count.innerHTML="- -";
         myGame.count.style.opacity=0.4;
@@ -47,11 +54,22 @@ function reset()
 {
     if(myGame.on)
     {
-        myGame.start_val=1;
-        myGame.count.innerHTML=myGame.count_value;
-        myGame.arr=[];
-        myGame.click=[];
-        setTimeout(createString,1000);
+        if(myGame.count_value>20)
+        {
+            myGame.count_value=0;
+        }
+        else
+        {
+            clear();
+            myGame.count.innerHTML="- -";
+            myGame.arr=[];
+            myGame.click=[];
+            for(let i=0;i<myGame.set_start.length;i++)
+            {
+                myGame.button[i].style.background=myGame.set_start[i];
+            }
+            myGame.set_time.push(setTimeout(createString,1000));
+        }
     }
 
 }
@@ -101,7 +119,7 @@ function glow()
     {
         let simon=myGame.button[myGame.arr[i]];
         let k=1000+(i*1000);
-        setTimeout(function()
+        myGame.set_time.push(setTimeout(function()
         {
             if(myGame.on)
             {
@@ -120,7 +138,7 @@ function glow()
                 disable(false);
                 }
             },600 );
-        }, k);
+        }, k));
     }
 }
 function click_button(simon)
@@ -135,36 +153,41 @@ function click_button(simon)
             {
                     simon.style.background=myGame.set_start[index];     
             },200 );
-        checking();
+        if(myGame.click[myGame.counter]!==myGame.arr[myGame.counter])
+        {
+            disable(true);
+            checking();
+        }
+        else if(myGame.counter===myGame.arr.length-1)
+        {
+            myGame.click=[];
+            myGame.counter=0;
+            disable(true);
+            setTimeout(createString,1000);
+        }
+        else
+        {
+            myGame.counter++;
+        }
     }
 }
 function checking()
 {
-    for(let i=0;i<myGame.click.length;i++)
+    document.getElementById("wrong").play();
+    myGame.count.innerHTML="! !";
+    myGame.click=[];
+    myGame.counter=0;
+    if(myGame.strict_val===1)
     {
-        if(!(myGame.click[i]===myGame.arr[i]))
+        myGame.arr=[];
+        setTimeout(createString,1000);
+    }
+    else
+    {
+        setTimeout(function()
         {
-                    document.getElementById("wrong").play();
-                    myGame.count.innerHTML="! !";
-            myGame.click=[];
-            if(myGame.strict_val===1)
-            {
-                myGame.arr=[];
-                setTimeout(createString,1000);
-            }
-            else
-            {
-                setTimeout(function()
-                {
-                    myGame.count.innerHTML=myGame.count_value;
-                    glow();
-                },2000);
-            }
-        }
-        else if((myGame.arr.length===myGame.click.length)&&(i===(myGame.arr.length-1)) && myGame.on)
-        {
-            setTimeout(createString,1000);
-            myGame.click=[];
-        }
+            myGame.count.innerHTML=myGame.count_value;
+            glow();
+        },1000);
     }
 }
