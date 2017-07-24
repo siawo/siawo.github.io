@@ -102,7 +102,8 @@ function createString()// next value is generated
             },400);
         return;
     }
-    myGame.count.innerHTML=myGame.count_value;
+    var extra=myGame.count_value<=9?"0":"";
+    myGame.count.innerHTML=extra + myGame.count_value;
     glow();// the button chneges it colour according to the string
 }
 function disable(x)// disables or enables the 4 buttons
@@ -188,7 +189,8 @@ function checking()
     {
         setTimeout(function()
         {
-            myGame.count.innerHTML=myGame.count_value;
+            var extra=myGame.count_value<=9?"0":"";
+            myGame.count.innerHTML=extra+myGame.count_value;
             glow();
         },1000);
     }
