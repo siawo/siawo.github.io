@@ -1,18 +1,19 @@
 #main
 {   
-  position:relative;
-  margin:auto;
-  margin-top: 10%;
-  height: 500;
-  width: 500;
-    
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 37.5vw;
+  width: 37.5vw;   
 }
 .button
-{ position:absolute;
-  height:250;
-  width:250;
+{ 
+  position:absolute;
+  height:18.75vw;
+  width:18.75vw;
   border: solid #303030;
-  box-shadow: 0px 0px 15px #303030;
+  box-shadow: 0vw 0vw 1.125vw #303030;
 }
 .button:focus
 {
@@ -20,11 +21,11 @@
 }
 .top-left
 { 
-  top:0px;
-  left:0px;
+  top:0vw;
+  left:0vw;
   border-radius: 100% 0 0 0;
   background-color:#47ad4c;
-  border-width: 24px 12px 12px 24px;
+  border-width: 1.8vw 0.9vw 0.9vw 1.8vw;
 }
 .top-right
 {   
@@ -32,7 +33,7 @@
   right:0px;
   border-radius: 0 100% 0 0;
   background-color:#9b1414;
-  border-width: 24px 24px 12px 12px;
+  border-width: 1.8vw 1.8vw 0.9vw 0.9vw;
 }
 .bottom-left
 {   
@@ -40,7 +41,7 @@
   left:0px;
   border-radius: 0 0 0 100%;
   background-color:#d6c020;
-  border-width: 12px 12px 24px 24px;
+  border-width: 0.9vw 0.9vw 1.8vw 1.8vw;
 }
 .bottom-right
 {
@@ -48,43 +49,43 @@
   right:0px;
   border-radius: 0 0 100% 0 ;
   background-color:#37609e;
-  border-width: 12px 24px 24px 12px;
+  border-width: 0.9vw 1.8vw 1.8vw 0.9vw;
 }
 #inner
 {
-  position:absolute;
-  height:230px;
-  width:230px;
-  top:125px;
-  left:125px;
+  position:relative;
+  height:17.25vw;
+  width:17.25vw;
+  top:9.375vw;
+  left:9.375vw;
   border-radius: 50%;
   background-color: #f7f7f7;
-  border: 12px solid #303030;
+  border: 0.9vw solid #303030;
 }
 #simon-text
 {
   font-family: Alfa Slab One; 
   position: absolute;
-  left:15px;
-  top: -15px;
-  font-size: 55px;
+  left:1.125vw;
+  top: -1.125vw;
+  font-size: 4.125vw;
   color: #303030;
 }
 sup
 {
-  font-size: 18px;
+  font-size: 1.35vw;
 }
 .start
 {   
   position: absolute;
   background-color:red;
-  border: 4px solid #303030;
-  height: 30px;
-  width:30px;
+  border: 0.3vw solid #303030;
+  height: 1.9vw;
+  width:1.9vw;
   border-radius: 50%;
-  bottom:77px;
-  right:90px;
-  box-shadow: 0px 0px 4px #303030;
+  bottom:5.5vw;
+  right:6.5vw;
+  box-shadow: 0vw 0vw 0.3vw #303030;
 }
 .start:focus
 {
@@ -92,20 +93,20 @@ sup
 }
 .start:active
 {
-  box-shadow: 0px 0px 4px #303030;
-  margin-bottom: -4px;
+  box-shadow: 0vw 0vw 0.3vw #303030;
+  margin-bottom: -0.3vw;
 }
 .strict
 {
   position: absolute;
   background-color:yellow;
-  border: 4px solid #303030;
-  height: 30px;
-  width:30px;
+  border: 0.3vw solid #303030;
+  height: 1.9vw;
+  width:1.9vw;
   border-radius: 50%;
-  bottom:77px;
-  right:34px;
-  box-shadow: 0px 0px 4px #303030;
+  bottom:5.5vw;
+  right:2.3vw;
+  box-shadow: 0vw 0vw 0.3vw #303030;
 }
 .strict:focus
 {
@@ -113,70 +114,70 @@ sup
 }
 .strict:active
 {
-  box-shadow: 0px 0px 4px #303030;
-  margin-bottom: -4px;
+  box-shadow: 0vw 0vw 0.3vw #303030;
+  margin-bottom: -0.3vw;
 }
 .light
 {
   position: absolute;
   background-color:#471c1c;
-  height: 7px;
-  width: 7px;
+  height: 0.525vw;
+  width: 0.525vw;
   border-radius: 50%;
-  bottom:112px;
-  right:42px;
-  border:2px solid #303030;
+  bottom:8.4vw;
+  right:3.15vw;
+  border:0.15vw solid #303030;
 }
 .counter
 {
   position: absolute;
-  bottom:70px;
-  left:20px;
-  height:38px;
-  width:58px;
-  border: 4px solid #303030;
+  bottom:5.25vw;
+  left:1.5vw;
+  height:2.85vw;
+  width:4.35vw;
+  border: 0.3vw solid #303030;
   background-color: #471c1c;
   border-radius: 20%;
 }
 #count
 {  
   font-family: VT323;
-  font-size: 30px;
+  font-size: 2.25vw;
   position: relative;
   color:red;
   text-align: center;
-  margin-top:0px;
-  padding-top: 5px;
+  margin-top:0vw;
+  padding-top: 0.375vw;
   opacity: 0.3;
 }
 .p
 {
   font-family: Oswald;
-  font-size:13px;
+  font-size:0.975vw;
   position: absolute;
-  bottom:32px;
+  bottom:2.4vw;
   color: #303030;
 }
 #pc
 {
-  left:37px;
+  left:2.775vw;
 }
 #ps
 {
-  left:112px;
+  left:8.4vw;
 }
 #pst
 {
-  right:30px;
+  right:2.25vw;
 }
 /****************w3school*****start*********************************/
 .switch {
   position: relative;
-  top:190px;
-  left:100px;
+  top:14.25vw;
+  left:7.5vw;
   display: inline-block;
-  width: 46px;
-  height: 23px;
+  width: 3.45vw;
+  height: 1.725vw;
 }
 
 .switch input {display:none;}
@@ -196,10 +197,10 @@ sup
 .slider:before {
   position: absolute;
   content: "";
-  height: 19px;
-  width: 18px;
-  left: 2px;
-  bottom: 2px;
+  height: 1.425vw;
+  width: 1.35vw;
+  left: 0.15vw;
+  bottom: 0.15vw;
   background-color: #4d9fbc;
   border-radius: 10%;
   -webkit-transition: .4s;
@@ -211,28 +212,34 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #332e2e;
+  box-shadow: 0 0 0.075vw #332e2e;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(23px);
-  -ms-transform: translateX(23px);
-  transform: translateX(23px);
+  -webkit-transform: translateX(1.725vw);
+  -ms-transform: translateX(1.735vw);
+  transform: translateX(1.725vw);
 }
 /****************w3school*****end*********************************/
 .p1
 {
   font-family: Oswald;
-  font-size: 13px;
+  font-size: 0.975vw;
   position: absolute;
-  bottom:-10px;
+  bottom:-0.75vw;
   color: #303030;
 }
 #on
 {
-  left:50px;
+  left:3.75vw;
 }
 #off
 {
-  left:-20px;
+  left:-1.5vw;
+}
+button:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+    border: 0;
 }
