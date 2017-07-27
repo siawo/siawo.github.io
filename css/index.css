@@ -1,3 +1,7 @@
+body
+{
+  background:url(../assets/Background.png);
+}
 #main
 {   
   position:absolute;
