@@ -39,14 +39,14 @@ function on(on)//when the on/off box is checked
     myGame.on=on.checked;
     if(myGame.on)
     {
-        myGame.start.disabled=false;//start button is enabled
-        myGame.strict.disabled=false;//strict button is enabled
+        //myGame.start.disabled=false;//start button is enabled
+        //myGame.strict.disabled=false;//strict button is enabled
         myGame.count.style.opacity=1;//the opacity of the count text is increased
     }
     else
     {
-        myGame.start.disabled=true;//start button is disabled
-        myGame.strict.disabled=true;//start button is disabled
+        //myGame.start.disabled=true;//start button is disabled
+        //myGame.strict.disabled=true;//start button is disabled
         for(var i=0;i<myGame.set_start.length;i++)//set the original colour back in button
         {
             myGame.button[i].style.background=myGame.set_start[i];
