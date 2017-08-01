@@ -2,11 +2,11 @@
     <head>
     	<TITLE>Simon Game</TITLE>
     	<!-- audio links-->
-    	<audio id="green" src="assets/green.ogg"></audio>
-        <audio id="red" src="assets/red.ogg"></audio>
-        <audio id="yellow" src="assets/yellow.ogg"></audio>
-        <audio id="blue" src="assets/blue.ogg"></audio>
-        <audio id="wrong" src="assets/wrong.ogg"></audio>
+    	<audio id="green" src="assets/green.ogg" type="audio/ogg"></audio>
+        <audio id="red" src="assets/red.ogg" type="audio/ogg"></audio>
+        <audio id="yellow" src="assets/yellow.ogg" type="audio/ogg"></audio>
+        <audio id="blue" src="assets/blue.ogg" type="audio/ogg"></audio>
+        <audio id="wrong" src="assets/wrong.ogg" type="audio/ogg"></audio>
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/fonts.css">
         <script defer src="scripts/memory.js"></script>
@@ -37,7 +37,7 @@
                 <p class="p" id="ps">START</p>
                 <p class="p" id="pst">STRICT</p>
                 <label class="switch">
-                <input type="checkbox" id="on" onclick="on(this)" unchecked>
+                <input type="checkbox" id="check_on" onclick="on(this)" unchecked>
                 <span class="slider"></span>
                 <p class="p1" id="on">ON</p>
                 <p class="p1" id="off">OFF</p>
