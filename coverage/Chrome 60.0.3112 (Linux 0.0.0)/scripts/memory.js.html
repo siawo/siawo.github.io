@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for scripts/memory.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">scripts/</a> memory.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>120/120</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>24/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>120/120</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">135×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">92×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+var myGame = {
+  on: false, // for keeping the status of on/off button
+  strict_val: 0, // contains 0 for non-strict and 1 for strict mode
+  arr: [], // contains the series of button to be glow
+  count_value: 0, // contains the value of count
+  set_value: ['green', 'red', 'yellow', 'blue'], // contains array of value
+  set_start: ['#47ad4c', '#9b1414', '#d6c020', '#37609e'], // contains initial color of the buttons
+  set_blink: ['#26ff00', '#ff0000', '#f8ff32', '#00bbff'], // contains the color to be changed
+  click: [], // contains the buttons clicked 
+  button: [], // will contain the element of button
+  counter: 0, // for checking purpose
+  set_time: [] // to conatins the objects of set time outs
+};
+function getSimon () {
+  for (var i = 0; i &lt; 4; i++) { // the element of buttons is passed to the array
+    myGame.button[i] = document.getElementById('simon' + i);
+  }
+  return true;
+}
+&nbsp;
+function clear () { // will clear all the set time out
+  for (var i = 0; i &lt; myGame.set_time.length; i++) {
+    clearTimeout(myGame.set_time[i]);
+  }
+  return true;
+}
+&nbsp;
+function disable (x) { // disables or enables the 4 buttons
+  for (var i = 0; i &lt; 4; i++) {
+    myGame.button[i].disabled = x;
+  }
+  return true;
+}
+function extra () {
+  return myGame.count_value &lt;= 9 ? '0' : '';
+}
+function on () { // eslint-disable-line no-unused-vars
+// when the on/off box is checked
+  myGame.on = document.getElementById('check_on').checked;
+  if (myGame.on) {
+    getSimon();
+    document.getElementById('count').style.opacity = 1; // the opacity of the count text is increased
+  } else {
+    for (var i = 0; i &lt; myGame.set_start.length; i++) { // set the original colour back in button
+      myGame.button[i].style.background = myGame.set_start[i];
+    }
+    clear(); // clearing the time outs
+    disable(true); // disabling the buttons
+    myGame.count_value = 0;
+    myGame.arr = [];
+    myGame.click = [];
+    myGame.strict_val = 0;
+    document.getElementById('count').innerHTML = '--';
+    document.getElementById('count').style.opacity = 0.3;
+    document.getElementById('light').style.backgroundColor = '#471c1c';
+  }
+}
+&nbsp;
+function glow () { // the buttons changes it colour to bring the glowing effect
+  disable(true); // disable the buttons during the buttons glowing
+  for (var i = 0; i &lt; myGame.arr.length; i++) {
+    var j = i;
+    var simon = myGame.button[myGame.arr[j]]; // the button to glow is set in simon
+    var k = 1000 + (i * 1000); // generates the time after which a button will glow
+    myGame.set_time.push(
+      setTimeout(function (j, simon) {
+        // if (myGame.on) {
+        simon.style.background = myGame.set_blink[myGame.arr[j]];
+        document.getElementById(myGame.set_value[myGame.arr[j]]).play(); // the sound is played according to the button
+        // }
+        setTimeout(function (j, simon) {
+          // if (myGame.on) {
+          simon.style.background = myGame.set_start[myGame.arr[j]];
+          // }
+          if (j === (myGame.arr.length - 1) &amp;&amp; myGame.on) { // enables the button after all the glowing is done
+            disable(false);
+          }
+        }, 600, j, simon);
+      }, k, j, simon)
+    );
+  }
+}
+&nbsp;
+function createString (arr) { // next value is generated
+  myGame.arr.push(Math.floor(Math.random() * 4));
+  if (arr !== undefined) {
+    myGame.arr = arr;
+  }
+  myGame.count_value = myGame.arr.length;
+  if (myGame.count_value &gt; 20) { // if the count is more than 20, user has won and the game resets
+    setTimeout(function () {
+      document.getElementById('count').innerHTML = 'WON';
+      reset();
+    }, 400);
+    return;
+  }
+  document.getElementById('count').innerHTML = extra() + myGame.count_value;
+  glow(); // the button chneges it colour according to the string
+}
+&nbsp;
+function reset () { // this function is called by start button
+  if (myGame.on) { // this acts if the game is on
+    if (myGame.count_value &gt; 20) { // this is for winning condition, only the count value is set back to 0
+      myGame.count_value = 0;
+    } else {
+      clear();
+      myGame.count_value = 0;
+      document.getElementById('count').innerHTML = '--'; // all these lines willhelp in the blinking effect
+      myGame.set_time.push(
+        setTimeout(
+          function () {
+            document.getElementById('count').innerHTML = '';
+          }, 200
+        )
+      );
+      myGame.set_time.push(
+        setTimeout(
+          function () {
+            document.getElementById('count').innerHTML = '--';
+          }, 400
+        )
+      );
+      myGame.set_time.push(
+        setTimeout(
+          function () {
+            document.getElementById('count').innerHTML = '';
+          }, 600
+        )
+      );
+      myGame.set_time.push(
+        setTimeout(
+          function () {
+            document.getElementById('count').innerHTML = '--';
+          }, 800
+        )
+      );
+      myGame.arr = [];
+      myGame.click = [];
+      for (var i = 0; i &lt; myGame.set_start.length; i++) {
+        myGame.button[i].style.background = myGame.set_start[i];
+      }
+      myGame.set_time.push(setTimeout(createString, 1000));
+    }
+  }
+}
+&nbsp;
+function set () { // eslint-disable-line no-unused-vars
+// it is called by strict button and helps to set value of strict and switch on the light
+  if (myGame.on) {
+    if (myGame.strict_val === 0) {
+      myGame.strict_val = 1;
+      document.getElementById('light').style.background = 'red';
+    } else {
+      myGame.strict_val = 0;
+      document.getElementById('light').style.background = '#471c1c';
+    }
+  }
+}
+&nbsp;
+function checking () {
+  document.getElementById('wrong').play(); // play the sound for wrong button
+  document.getElementById('count').innerHTML = '!!'; // sets the count display as !!
+  myGame.set_time.push(
+    setTimeout(
+      function () {
+        document.getElementById('count').innerHTML = '';
+      }, 200
+    )
+  ); // all the lines will help in the blinking effect
+  myGame.set_time.push(
+    setTimeout(
+      function () {
+        document.getElementById('count').innerHTML = '!!';
+      }, 400
+    )
+  );
+  myGame.set_time.push(
+    setTimeout(
+      function () {
+        document.getElementById('count').innerHTML = '';
+      }, 600
+    )
+  );
+  myGame.set_time.push(
+    setTimeout(
+      function () {
+        document.getElementById('count').innerHTML = '!!';
+      }, 800
+    )
+  );
+  myGame.click = []; // reset of click array
+  myGame.counter = 0; // reset of counter
+  if (myGame.strict_val === 1) { // if it is strict mode the game will start from stage 1 with new set of string
+    myGame.arr = [];
+    setTimeout(createString, 1000);
+  } else { // if it is non strict mode then previous string will glow
+    setTimeout(function () {
+      document.getElementById('count').innerHTML = extra() + myGame.count_value;
+      glow();
+    }, 1000);
+  }
+}
+&nbsp;
+function clickButton (simon) { // eslint-disable-line no-unused-vars
+// function is called when the 4 buttons are clicked
+  if (!simon.disabled) { // it only executes when buttons are enabled
+    var index = myGame.set_value.indexOf(simon.value);
+    document.getElementById(simon.value).play(); // the sound is played according to the button clicked
+    myGame.click.push(index); // a number is pushed according to the button clicked
+    simon.style.background = myGame.set_blink[index]; // this line and set time out helps in chneging the color of button during click
+    setTimeout(function () {
+      simon.style.background = myGame.set_start[index];
+    }, 200);
+    if (myGame.click[myGame.counter] !== myGame.arr[myGame.counter]) { // if the button clicked does not match then the buttons are disabled
+      disable(true);
+      checking(); // the checking function is called
+    } else if (myGame.counter === myGame.arr.length - 1) { // if the checking of a complete string is done then the click array and counter is reset
+      myGame.click = [];
+      myGame.counter = 0;
+      myGame.strict_val = 0;
+      disable(true);
+      setTimeout(createString, 1000); // next random number is generated
+    } else {
+      myGame.counter++; // if all above conditions are false the counter value is incremented
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 04 2017 10:59:17 GMT+0530 (IST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
